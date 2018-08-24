@@ -44,6 +44,9 @@ gem 'active_model_serializers'
 
 gem 'foreman'
 
+#Elasticsearch
+gem 'elasticsearch-model', '~> 5.0'
+gem 'elasticsearch-rails', '~> 5.0'
 # Active Admin
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin'
 gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
@@ -140,6 +143,8 @@ group :test do
   gem 'rails-controller-testing'
 
   gem 'rack-test', require: 'rack/test'
+
+  gem 'elasticsearch-extensions', '~> 0.0'
 end
 
 group :production do
