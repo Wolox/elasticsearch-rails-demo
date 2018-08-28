@@ -22,9 +22,11 @@ module ElasticSearchImporter
     end
 
     def self.bulk_index(records, model)
-      model.__elasticsearch__.client.bulk(index: model.__elasticsearch__.index_name,
-                                          type: model.__elasticsearch__.document_type,
-                                          body: prepare_records(records))
+      model.__elasticsearch__.client.bulk({
+        index: model.__elasticsearch__.index_name,
+        type: model.__elasticsearch__.document_type,
+        body: prepare_records(records)
+      })
     end
   end
 end
