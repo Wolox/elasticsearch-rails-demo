@@ -10,16 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180824130135) do
+ActiveRecord::Schema.define(version: 20180828162244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "drama_clubs", force: :cascade do |t|
+    t.string "title"
+    t.string "city"
+    t.string "category"
+    t.string "time_range"
+  end
 
   create_table "karate_dojos", force: :cascade do |t|
     t.string "name"
     t.string "city"
     t.string "activity_code"
     t.string "category"
+  end
+
+  create_table "photography_workshops", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.integer "max_students"
+    t.integer "available_cameras"
+  end
+
+  create_table "soccer_clubs", force: :cascade do |t|
+    t.string "title"
+    t.string "city"
+    t.string "sponsors"
+    t.boolean "professional", default: true
   end
 
 end

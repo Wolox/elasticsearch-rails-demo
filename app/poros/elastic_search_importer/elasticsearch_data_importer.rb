@@ -1,15 +1,13 @@
 module ElasticSearchImporter
   module ElasticsearchDataImporter
     def self.import
-      [KarateDojo].each do |model_to_search|
+      [KarateDojo, DramaClub, SoccerClub, PhotographyWorkshop].each do |model_to_search|
         model_to_search.__elasticsearch__.create_index!(force: true)
-
         model_to_search.find_in_batches do |records|
           bulk_index(records, model_to_search)
         end
       end
     end
-
     def self.prepare_records(records)
       records.map do |record|
         {
@@ -20,13 +18,12 @@ module ElasticSearchImporter
         }
       end
     end
-
     def self.bulk_index(records, model)
-      model.__elasticsearch__.client.bulk({
+      model.__elasticsearch__.client.bulk(
         index: model.__elasticsearch__.index_name,
         type: model.__elasticsearch__.document_type,
         body: prepare_records(records)
-      })
+      )
     end
   end
 end
