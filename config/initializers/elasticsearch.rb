@@ -1,5 +1,5 @@
 config = {
-  host: "http://localhost:9200",
+  host: "#{ENV['TEST_CLUSTER_NETWORK_HOST']}:#{ENV['TEST_CLUSTER_PORT']}",
   retry_on_failure: true,
   transport_options: {
     request: { timeout: 250 }

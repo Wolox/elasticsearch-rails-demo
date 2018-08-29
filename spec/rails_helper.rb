@@ -8,21 +8,6 @@ include ActionDispatch::TestProcess
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
-# VCR Configuration
-# require 'vcr'
-# require 'webmock/rspec'
-
-# VCR.configure do |c|
-#   c.ignore_hosts 'codeclimate.com'
-#   c.cassette_library_dir = 'spec/cassettes'
-#   c.hook_into :webmock
-#   c.configure_rspec_metadata!
-# end
-
-# RSpec::Sidekiq.configure do |config|
-#   config.warn_when_jobs_not_processed_by_sidekiq = false
-# end
-
 RSpec.configure do |config|
   config.include ActionDispatch::TestProcess
   config.file_fixture_path = Rails.root.join('spec', 'support', 'fixtures')
