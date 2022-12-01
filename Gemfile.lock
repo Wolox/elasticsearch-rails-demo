@@ -288,7 +288,8 @@ GEM
     multi_json (1.12.2)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
-    mustermann (1.0.1)
+    mustermann (2.0.2)
+      ruby2_keywords (~> 0.0.1)
     newrelic_rpm (4.4.0.336)
     nio4r (2.1.0)
     nokogiri (1.8.1)
@@ -309,13 +310,13 @@ GEM
     puma (3.10.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
-    rack (2.0.3)
+    rack (2.2.4)
     rack-attack (5.0.1)
       rack
     rack-contrib (1.2.0)
       rack (>= 0.9.1)
     rack-cors (1.0.2)
-    rack-protection (2.0.0)
+    rack-protection (2.2.3)
       rack
     rack-proxy (0.6.2)
       rack
@@ -408,6 +409,7 @@ GEM
       ansi
       ast
     ruby-progressbar (1.8.3)
+    ruby2_keywords (0.0.5)
     ruby_parser (3.10.1)
       sexp_processor (~> 4.9)
     rubycritic (3.2.3)
@@ -452,10 +454,10 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
-    sinatra (2.0.0)
-      mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.0)
+    sinatra (2.2.3)
+      mustermann (~> 2.0)
+      rack (~> 2.2)
+      rack-protection (= 2.2.3)
       tilt (~> 2.0)
     slim (3.0.8)
       temple (>= 0.7.6, < 0.9)
@@ -486,7 +488,7 @@ GEM
       ref
     thor (0.19.4)
     thread_safe (0.3.6)
-    tilt (2.0.8)
+    tilt (2.0.11)
     timecop (0.9.1)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
